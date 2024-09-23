@@ -9,7 +9,7 @@ export const StyledFormRoot = styled.div`
   width: 100%;
 
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   display: flex;
   flex-direction: column;
@@ -21,6 +21,10 @@ export const StyledFormInputWrapper = styled.div<{ noPadding?: boolean }>`
   width: 100%;
   height: 100%;
   padding: ${props => (props.noPadding ? '0' : '0 20px')};
+
+  @media screen and (max-width: 990px) {
+    padding-left: 0;
+  }
 `
 export const StyledHeaderTextWrapper = styled.div`
   width: 100%;
@@ -47,15 +51,9 @@ export const StyledFormHeader = styled.header`
   align-items: center;
 
   background: ${({ theme }) => theme.body.componentsWrapperBg};
+  border-bottom: 1px solid ${({ theme }) => theme.body.secondaryBorderBackground};
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    /* left: 20px; // Match the padding
-    right: -20px; // Match the padding */
-    height: 1px; // Adjust the height as needed
-    width: calc(100% - 40px);
-    background: ${({ theme }) => theme.body.secondaryBorderBackground};
+  @media screen and (max-width: 990px) {
+    padding-left: 0;
   }
 `

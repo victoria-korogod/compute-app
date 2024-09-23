@@ -147,6 +147,9 @@ const StyledLogsHeader = styled.header`
   align-items: center;
   gap: 4px;
   padding: 2px 14px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 `
 
 const LogLine = styled.div`
@@ -165,6 +168,7 @@ const LineNumber = styled.span`
 const LogText = styled.span`
   flex: 1;
   white-space: pre-wrap;
+  word-break: break-word;
 `
 
 const loadAnimation = keyframes`

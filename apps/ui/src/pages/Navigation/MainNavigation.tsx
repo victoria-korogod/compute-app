@@ -106,8 +106,8 @@ const MainNavigation = ({ restricted, theme }: Props) => {
 
   return (
     <StyledRoot $showSidebar={showSidebar}>
-      <StyledMenu onClick={() => setShowSidebar(prevState => !prevState)}>
-        <BurgerMenu size={50} />
+      <StyledMenu onClick={() => setShowSidebar(prevState => !prevState)} title="Toggle Menu">
+        <BurgerMenu size={40} />
       </StyledMenu>
       <StyledUl>
         <Tooltip content={t('home')} position={Tooltip?.positions?.LEFT}>
@@ -158,20 +158,20 @@ const StyledRoot = styled.div<{ $showSidebar: boolean }>`
     position: fixed;
     top: 0;
     left: 0;
-    padding-top: 50px;
+    padding-top: 28px;
     z-index: 100;
     
     ${({ $showSidebar }) => !$showSidebar && css`
-      height: 50px;
+      height: 28px;
       overflow: hidden;
-      padding: 50px 0 0 0;
+      padding: 28px 0 0 0;
     `}
   }
 `
 
 const StyledMenu = styled.button`
   position: fixed;
-  top: 0;
+  top: -4px;
   left: 16px;
   display: none;
 
