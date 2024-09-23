@@ -57,7 +57,7 @@ const FilterPods = ({ values, handleChangeFilter }: any) => {
 
           <StyledButton color='primary' size='small'>
             <Box display={'flex'} alignItems={'center'} gap={0.5}>
-              <StyledSettingsIcon size={30} />
+              <StyledSettingsIcon size={20} />
               <TypographyPrimary value={'Network Volume'} size='xs-small' />
             </Box>
           </StyledButton>
