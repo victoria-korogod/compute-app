@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import withRenderModal from 'hocs/withRenderModal';
 
@@ -76,7 +77,13 @@ const ChangeSshKeyModal = ({ data: { onChangeSshKey } }: ChangeSshKeyModalProps)
               gap={1}
             >
               <TypographyPrimary value="No results found" size="x-large" bold />
-              <TypographySecondary value="Please add sshkeys first." size="xs-small" />
+              <Link to="/secrets" style={{
+                textDecoration: 'none',
+              }} onClick={() => closeModal('change-ssh-key-modal')}>
+                <TypographySecondary value="Please add sshkeys first." size="xs-small" style={{
+                  textDecorationLine: 'underline',
+                }} />
+              </Link>
             </Box>
           )}
         </Box>
