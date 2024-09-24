@@ -63,7 +63,9 @@ const PodDetails = () => {
                   <Settings formik={formik} />
                 </TabPanel>
                 <TabPanel>
-                  <Logs />
+                  <StyledLogsTab>
+                    <Logs />
+                  </StyledLogsTab>
                 </TabPanel>
               </TabPanels>
             </TabsContext>
@@ -86,4 +88,8 @@ export const StyledWrapper = styled.div`
     padding: 0;
     height: auto;
   }
+`
+
+const StyledLogsTab = styled.div`
+  padding: 24px 16px 0 0;
 `

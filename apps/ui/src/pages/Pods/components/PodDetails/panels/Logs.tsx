@@ -57,7 +57,6 @@ const Logs = ({ loadingLogs, playLogs }: { loadingLogs?: boolean; playLogs?: boo
   }, [play, logs, loadingLogs, playLogs])
 
   return (
-    <StyledFormInputWrapper noPadding>
       <StyledWrapper>
         {loading && <LinearLoader />}
 
@@ -95,7 +94,6 @@ const Logs = ({ loadingLogs, playLogs }: { loadingLogs?: boolean; playLogs?: boo
           ))}
         </StyledLogsContainer>
       </StyledWrapper>
-    </StyledFormInputWrapper>
   )
 }
 
@@ -144,7 +142,7 @@ const StyledLogsContainer = styled.div`
   color: #d6d6d6;
   font-weight: 400;
   border-radius: 10px;
-  height: 250px;
+  height: 100%;
 
   border: 2px solid ${({ theme }) => theme.body.secondaryBorderBackground};
 `
@@ -186,6 +184,7 @@ const loadAnimation = keyframes`
 
 const StyledWrapper = styled.div`
   position: relative;
+  height: 100%;
 `
 
 const LinearLoader = styled.div`
