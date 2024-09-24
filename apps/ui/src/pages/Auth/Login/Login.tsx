@@ -199,10 +199,11 @@ export const StyledInputWrapper = styled.div`
 export const StyledHeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 87px;
   align-items: center;
   text-align: center;
   gap: 22px;
 
   margin-top: 10px;
+  max-width: 400px;
+  padding: 0 16px;
 `

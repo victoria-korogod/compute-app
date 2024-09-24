@@ -132,9 +132,9 @@ const StyledFormContainer = styled.div`
   margin-top: 22px;
   display: grid;
   grid-row-gap: 22px;
-  padding: 0 87px;
-  width: 550px;
-  max-width: 550px;
+  width: 100%;
+  max-width: 400px;
+  padding: 0 16px;
 `;
 const StyledLoginWrapper = styled.div`
   display: flex;
