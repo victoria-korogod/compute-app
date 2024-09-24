@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import TypographyQuaternary from 'components/Typography/Quaternary'
 import { Download, PlayOutline, ReloadOutline } from 'share-ui/components/Icon/Icons'
 import IconButton from 'share-ui/components/IconButton/IconButton'
 import styled, { keyframes } from 'styled-components'
 import { StyledFormInputWrapper } from 'styles/formStyles.css'
-import { StyledPanelWrapper } from 'styles/panelStyles.css'
 
 const Logs = ({ loadingLogs, playLogs }: { loadingLogs?: boolean; playLogs?: boolean }) => {
   const [logs, setLogs] = useState<string[]>([])
   const [displayedLogs, setDisplayedLogs] = useState<string[]>([])
   const [play, setPlay] = useState(false)
   const [loading, setLoading] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const allLogs = TEMP_LOGS_DATA.trim().split('\n')
@@ -41,6 +41,13 @@ const Logs = ({ loadingLogs, playLogs }: { loadingLogs?: boolean; playLogs?: boo
           }
           return [...currentLogs, ...nextLogs]
         })
+
+        window.requestAnimationFrame(() => {
+          ref.current?.scrollTo({
+            top: 99999,
+            behavior: 'smooth',
+          })
+        })
       }, 2000)
       return () => {
         clearInterval(intervalId)
@@ -50,9 +57,11 @@ const Logs = ({ loadingLogs, playLogs }: { loadingLogs?: boolean; playLogs?: boo
   }, [play, logs, loadingLogs, playLogs])
 
   return (
-    <StyledPanelWrapper>
-      <StyledFormInputWrapper noPadding>
-        <StyledLogsContainer>
+    <StyledFormInputWrapper noPadding>
+      <StyledWrapper>
+        {loading && <LinearLoader />}
+
+        <StyledLogsContainer ref={ref}>
           {!loadingLogs && (
             <StyledLogsHeader>
               <TypographyQuaternary value='System Logs' bold size='medium' />
@@ -78,7 +87,6 @@ const Logs = ({ loadingLogs, playLogs }: { loadingLogs?: boolean; playLogs?: boo
               />
             </StyledLogsHeader>
           )}
-          {loading && <LinearLoader />}
           {displayedLogs.map((log, index) => (
             <LogLine key={index}>
               <LineNumber>{index + 1}</LineNumber>
@@ -86,8 +94,8 @@ const Logs = ({ loadingLogs, playLogs }: { loadingLogs?: boolean; playLogs?: boo
             </LogLine>
           ))}
         </StyledLogsContainer>
-      </StyledFormInputWrapper>
-    </StyledPanelWrapper>
+      </StyledWrapper>
+    </StyledFormInputWrapper>
   )
 }
 
@@ -127,7 +135,6 @@ const TEMP_LOGS_DATA = `
 `
 
 const StyledLogsContainer = styled.div`
-  height: 100%;
   width: 100%;
   overflow-y: auto;
   font-family: monospace;
@@ -137,6 +144,7 @@ const StyledLogsContainer = styled.div`
   color: #d6d6d6;
   font-weight: 400;
   border-radius: 10px;
+  height: 250px;
 
   border: 2px solid ${({ theme }) => theme.body.secondaryBorderBackground};
 `
@@ -176,11 +184,19 @@ const loadAnimation = keyframes`
   to { left: 100%; }
 `
 
+const StyledWrapper = styled.div`
+  position: relative;
+`
+
 const LinearLoader = styled.div`
   margin-top: 1px;
   height: 4px;
   width: 100%;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
   background-color: transparent; // Make the background transparent
   overflow: hidden; // Ensure the inner bar doesn't overflow the container
 

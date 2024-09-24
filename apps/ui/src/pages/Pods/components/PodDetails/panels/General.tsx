@@ -95,9 +95,7 @@ const General = ({ podData, deletePod }: { podData: IPodResponse; deletePod: (id
 
             <Utilization />
 
-            <StyledLogsWrapper>
-              <Logs loadingLogs playLogs={play} />
-            </StyledLogsWrapper>
+            <Logs loadingLogs playLogs={play} />
 
             <StyledFooter>
               <StyledButtonsWrapper>
@@ -189,7 +187,4 @@ const StyledNameWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 4px;
-`;
-const StyledLogsWrapper = styled.div`
-  height: 300px;
 `;
