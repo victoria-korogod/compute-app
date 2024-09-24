@@ -155,6 +155,7 @@ const StyledRoot = styled.div<{ $showSidebar: boolean }>`
   background: rgb(32 33 36);
   position: sticky;
   top: 0;
+  z-index: 100;
 
   @media (max-width: 767px) {
     position: fixed;
@@ -163,7 +164,6 @@ const StyledRoot = styled.div<{ $showSidebar: boolean }>`
     bottom: 0;
     height: auto;
     padding-top: 28px;
-    z-index: 100;
     
     ${({ $showSidebar }) => !$showSidebar && css`
       height: 28px;
