@@ -36,7 +36,6 @@ export const StyledAbsoluteLoaderWrapper = styled.div`
 `
 export const StyledFormHeader = styled.header`
   min-height: 60px;
-  max-height: 60px;
   padding: 2px 20px;
   padding-bottom: 12px;
 
@@ -47,7 +46,9 @@ export const StyledFormHeader = styled.header`
   background: ${({ theme }) => theme.body.componentsWrapperBg};
   border-bottom: 1px solid ${({ theme }) => theme.body.secondaryBorderBackground};
 
-  @media screen and (max-width: 990px) {
+  @media screen and (max-width: 767px) {
     padding-left: 0;
+    flex-direction: column;
+    align-items: flex-start;
   }
 `
