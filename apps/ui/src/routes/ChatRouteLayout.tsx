@@ -12,6 +12,10 @@ export const StyledContainer = styled.div`
   position: relative;
   /* gap: 20px; */
   padding-right: 16px;
+
+  @media screen and (max-width: 990px) {
+    padding-right: 0;
+  }
 `
 export const StyledMenu = styled.button`
   display: none;
@@ -29,7 +33,6 @@ export const StyledLeftColumn = styled.div<{
   customWidth?: number
   showSidebarMobile?: boolean
 }>`
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -72,7 +75,6 @@ export const StyledLeftColumn = styled.div<{
 export const StyledRightColumn = styled.div<{ isHidden?: boolean }>`
   backdrop-filter: blur(100px);
 
-  overflow-y: auto;
 
   display: flex;
   max-width: 300px;
@@ -125,8 +127,6 @@ export const StyledChatWrapper = styled.div`
 
   display: flex;
   flex-direction: column;
-
-  overflow: auto;
 
   position: relative;
 

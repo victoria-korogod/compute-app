@@ -9,7 +9,6 @@ export const StyledFormRoot = styled.div`
   width: 100%;
 
   height: 100%;
-  overflow-y: auto;
 
   display: flex;
   flex-direction: column;
@@ -40,11 +39,6 @@ export const StyledFormHeader = styled.header`
   max-height: 60px;
   padding: 2px 20px;
   padding-bottom: 12px;
-
-  position: sticky;
-  width: 100%;
-  top: 0;
-  z-index: 10;
 
   display: flex;
   justify-content: space-between;

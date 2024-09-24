@@ -25,7 +25,7 @@ export default RootLayout;
 
 export const StyledRoot = styled.div`
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
 
   background: ${({ theme }) => theme.body.backgroundColorPrimary};
@@ -33,7 +33,7 @@ export const StyledRoot = styled.div`
 export const StyledOutletWrapper = styled.div`
   width: 100%;
   max-width: calc(100vw - 80px);
-  height: 100%;
+  min-height: 100vh;
 
   @media screen and (max-width: 767px) {
     max-width: 100%;

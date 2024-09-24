@@ -153,6 +153,8 @@ const StyledRoot = styled.div<{ $showSidebar: boolean }>`
   align-items: center;
   padding-bottom: 24px;
   background: rgb(32 33 36);
+  position: sticky;
+  top: 0;
 
   @media screen and (max-width: 767px) {
     position: fixed;
