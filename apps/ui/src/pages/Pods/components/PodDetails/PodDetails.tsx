@@ -82,7 +82,7 @@ export const StyledWrapper = styled.div`
   width: 100%;
   height: calc(100% - 60px);
 
-  @media screen and (max-width: 990px) {
+  @media (max-width: 990px) {
     padding: 0;
     height: auto;
   }

@@ -90,4 +90,8 @@ export const StyledTabListWrapper = styled.header`
   justify-content: space-between;
   padding-top: 4px;
   padding-right: 20px;
+
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+  }
 `;

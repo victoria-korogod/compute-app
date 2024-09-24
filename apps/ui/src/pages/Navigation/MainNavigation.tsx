@@ -156,10 +156,12 @@ const StyledRoot = styled.div<{ $showSidebar: boolean }>`
   position: sticky;
   top: 0;
 
-  @media screen and (max-width: 767px) {
+  @media (max-width: 767px) {
     position: fixed;
     top: 0;
     left: 0;
+    bottom: 0;
+    height: auto;
     padding-top: 28px;
     z-index: 100;
     
@@ -177,7 +179,7 @@ const StyledMenu = styled.button`
   left: 16px;
   display: none;
 
-  @media screen and (max-width: 767px) {
+  @media (max-width: 767px) {
     display: block;
   }
 `
