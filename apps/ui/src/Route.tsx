@@ -39,6 +39,7 @@ import MainRouteLayout from 'routes/MainRouteLayout';
 import Account from 'pages/Account';
 import Settings from 'pages/Settings';
 import ChangeSshkeyModal from 'pages/Pods/components/sshkey/ChangeSshkeyModal';
+import LandingPage from 'pages/LandingPage/LandingPage';
 
 const Route = () => {
   const { account_switch_loading } = useAppModeContext();
@@ -72,7 +73,7 @@ const Route = () => {
       <Routes>
         <Router element={<RootLayout theme={{ theme, toggleTheme }} />}>
           <Router element={<HomeRouteLayout />}>
-            <Router path="/" element={<Home />} key={document.location.href} />
+            <Router path="/dashboard" element={<Home />} key={document.location.href} />
           </Router>
 
           <Router path="pods" element={<Pods />} key={document.location.href}>
@@ -114,6 +115,9 @@ const Route = () => {
           <Router path="/authentication/:id" element={<TwoFAuthentication />} />
           <Router path="/login/update-password" element={<UpdatePassword />} />
           <Router path="/cheat-code" element={<CheatCode />} />
+        </Router>
+        <Router>
+          <Router path="/" element={<LandingPage />} />
         </Router>
       </Routes>
       <LoginModal />

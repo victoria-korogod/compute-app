@@ -10,7 +10,7 @@ const PublicRoute = () => {
   const { user } = React.useContext(AuthContext)
   const outlet = useOutlet()
 
-  if (user) return <Navigate to='/' />
+  if (user) return <Navigate to='/dashboard' />
 
   return (
     <StyledRoot>
