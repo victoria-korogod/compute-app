@@ -93,12 +93,12 @@ const Header = () => {
             ))}
           </ul>
           <div className="flex gap-5">
-            <button
-              type="button"
-              className="bg-white text-gray-700 p-2  w-32 rounded-md tracking-tight"
+            <Link
+              to="/dashboard"
+              className="bg-white text-gray-700 w-32 rounded-md tracking-tight flex items-center justify-center"
             >
               Dashboard
-            </button>
+            </Link>
             <button
               type="button"
               className="bg-transparent text-white border border-gray-600 p-2  w-32 rounded-md tracking-tight"
