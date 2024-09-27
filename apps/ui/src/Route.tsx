@@ -40,6 +40,7 @@ import Account from 'pages/Account';
 import Settings from 'pages/Settings';
 import ChangeSshkeyModal from 'pages/Pods/components/sshkey/ChangeSshkeyModal';
 import LandingPage from 'pages/LandingPage/LandingPage';
+import LandingPageLayout from 'pages/LandingPage/layouts/LandingPageLayout';
 
 const Route = () => {
   const { account_switch_loading } = useAppModeContext();
@@ -116,7 +117,7 @@ const Route = () => {
           <Router path="/login/update-password" element={<UpdatePassword />} />
           <Router path="/cheat-code" element={<CheatCode />} />
         </Router>
-        <Router>
+        <Router path="/" element={<LandingPageLayout />}>
           <Router path="/" element={<LandingPage />} />
         </Router>
       </Routes>
