@@ -61,7 +61,7 @@
     "import/no-duplicates": 2,
     "react/no-children-prop": 1,
     "import/no-extraneous-dependencies": [
-      1,
+      "warn",
       {
         "devDependencies": [
           "internals/**",
